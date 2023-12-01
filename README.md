@@ -1,7 +1,7 @@
 # MUSE
 
 ---
-#팀명: 개발 6팀
+# 팀명: 개발 6팀
 ## 팀원
 - 팀장    : [심재혁](https://github.com/SimJH99)
 - 군기담당 : [이창선](https://github.com/keepself)
