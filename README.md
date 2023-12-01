@@ -1,4 +1,4 @@
-# MUSE
+# MUSE:notes:
 ![Muse Banner](https://github.com/SimJH99/MUSE_DB/assets/123349044/4545d1e4-765c-4c8d-b538-5bea1b5e3c5b)
 
 ---
