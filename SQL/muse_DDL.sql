@@ -66,12 +66,14 @@ CREATE TABLE likes(
   canceled_at datetime,
   canceled_YN tinyint(1) DEFAULT 0,
   type ENUM ('members', 'music', 'playlist') NOT NULL,
+  who_id bigint,
   members_id bigint,
-  identifier_id bigint,
+  playlist_id bigint,
+  music_id bigint,
+  FOREIGN KEY (who_id) REFERENCES members (members_id) on delete cascade,
+  FOREIGN KEY (playlist_id) REFERENCES playlist (playlist_id) on delete cascade,
   FOREIGN KEY (members_id) REFERENCES members (members_id) on delete cascade,
-  FOREIGN KEY (identifier_id) REFERENCES playlist (playlist_id) on delete cascade,
-  FOREIGN KEY (identifier_id) REFERENCES members (members_id) on delete cascade,
-  FOREIGN KEY (identifier_id) REFERENCES music (music_id) on delete cascade
+  FOREIGN KEY (music_id) REFERENCES music (music_id) on delete cascade
 );
 
 CREATE TABLE playlist_music(
@@ -90,10 +92,12 @@ CREATE TABLE image(
   image_id bigint PRIMARY KEY AUTO_INCREMENT,
   type_ ENUM ('members', 'music', 'playlist') NOT NULL,
   image_url varchar(255),
-  identifier_id bigint,
-  FOREIGN KEY (identifier_id) REFERENCES playlist (playlist_id) on delete cascade,
-  FOREIGN KEY (identifier_id) REFERENCES members (members_id) on delete cascade,
-  FOREIGN KEY (identifier_id) REFERENCES music (music_id) on delete cascade
+  members_id bigint,
+  music_id bigint,
+  playlist_id bigint
+  FOREIGN KEY (playlist_id) REFERENCES playlist (playlist_id) on delete cascade,
+  FOREIGN KEY (members_id) REFERENCES members (members_id) on delete cascade,
+  FOREIGN KEY (music_id) REFERENCES music (music_id) on delete cascade
 );
 
 CREATE TABLE comment(
