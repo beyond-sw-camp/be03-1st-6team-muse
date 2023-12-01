@@ -65,7 +65,6 @@ CREATE TABLE likes(
   created_at datetime DEFAULT now(),
   canceled_at datetime,
   canceled_YN tinyint(1) DEFAULT 0,
-  type ENUM ('members', 'music', 'playlist') NOT NULL,
   who_id bigint,
   members_id bigint,
   playlist_id bigint,
@@ -90,7 +89,6 @@ CREATE TABLE playlist_music(
 
 CREATE TABLE image(
   image_id bigint PRIMARY KEY AUTO_INCREMENT,
-  type_ ENUM ('members', 'music', 'playlist') NOT NULL,
   image_url varchar(255),
   members_id bigint,
   music_id bigint,
