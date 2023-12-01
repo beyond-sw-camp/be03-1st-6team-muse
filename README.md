@@ -3,10 +3,10 @@
 ---
 # 팀명: 개발 6팀
 ## 팀원
-- 팀장    : [심재혁](https://github.com/SimJH99)
-- 군기담당 : [이창선](https://github.com/keepself)
-- 마스코트 : [홍신애](https://github.com/sinaetown)
-- 숟가락   : [조경남](https://github.com/GyeongNam)
+- 팀장 : [심재혁](https://github.com/SimJH99)
+- 사원 : [이창선](https://github.com/keepself)
+- 사원 : [홍신애](https://github.com/sinaetown)
+- 사원 : [조경남](https://github.com/GyeongNam)
 
 ---
 # 프로젝트 개요
