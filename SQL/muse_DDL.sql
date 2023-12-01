@@ -18,6 +18,7 @@ CREATE TABLE members(
 CREATE TABLE playlist(
   playlist_id bigint PRIMARY KEY AUTO_INCREMENT,
   playlist_name varchar(100) NOT NULL,
+  on_off tinyint(1) DEFAULT 1,
   created_at datetime DEFAULT now(),
   updated_at datetime,
   deleted_at datetime,
