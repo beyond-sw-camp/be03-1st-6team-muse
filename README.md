@@ -1,7 +1,8 @@
-# sound_cloud_DB
+# MUSE
 
 ---
-# 팀원
+#팀명: 개발 6팀
+## 팀원
 - 팀장    : [심재혁](https://github.com/SimJH99)
 - 군기담당 : [이창선](https://github.com/keepself)
 - 마스코트 : [홍신애](https://github.com/sinaetown)
