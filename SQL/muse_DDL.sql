@@ -1,6 +1,5 @@
 create database muse;
 use muse;
-
 CREATE TABLE members(
   members_id bigint PRIMARY KEY AUTO_INCREMENT,
   email varchar(100) UNIQUE NOT NULL,
@@ -24,7 +23,7 @@ CREATE TABLE playlist(
   deleted_at datetime,
   deleted_YN tinyint(1) DEFAULT 0,
   members_id bigint,
-FOREIGN KEY (members_id) REFERENCES members (members_id)
+  FOREIGN KEY (members_id) REFERENCES members (members_id)
 );
 
 CREATE TABLE music(
@@ -33,12 +32,12 @@ CREATE TABLE music(
   artist varchar(200) NOT NULL,
   description varchar(3000),
   music_file_url varchar(255) NOT NULL,
-  genre ENUM ('Kpop', 'Jpop', 'OST', 'Pop', 'Classic', 'Jazz', 'Indie', 'Canadian_blues', 
-  'Contemporary_RnB', 'Punk_blues', 'Crossover_music', 'Instrumental', 'Lofi', 'Blues_rock', 
-  'Chicago_blues', 'Delta_blues', 'EDM', 'Country_pop', 'Country_rap', 'Country_rock', 'Instrumental_country', 
-  'Western', 'New_age', 'Darkcore', 'Disco', 'City_pop', 'Dance_pop', 'Electronic_rock', 'Dance_rock', 
-  'Alternative_dance', 'Madchester', 'Baggy', 'New_rave', 'New_romantic', 'Electropop', 
-  'Electronica', 'Folktronica', 'Acid_jazz','Jungle', 'Hipster_hop', 'Cloud_rap', 'Acid_house', 
+  genre ENUM ('Kpop', 'Jpop', 'OST', 'Pop', 'Classic', 'Jazz', 'Indie', 'Canadian_blues',
+  'Contemporary_RnB', 'Punk_blues', 'Crossover_music', 'Instrumental', 'Lofi', 'Blues_rock',
+  'Chicago_blues', 'Delta_blues', 'EDM', 'Country_pop', 'Country_rap', 'Country_rock', 'Instrumental_country',
+  'Western', 'New_age', 'Darkcore', 'Disco', 'City_pop', 'Dance_pop', 'Electronic_rock', 'Dance_rock',
+  'Alternative_dance', 'Madchester', 'Baggy', 'New_rave', 'New_romantic', 'Electropop',
+  'Electronica', 'Folktronica', 'Acid_jazz','Jungle', 'Hipster_hop', 'Cloud_rap', 'Acid_house',
   'Chicago_house', 'Futurepop', 'Dubstep'),
   on_off tinyint(1),
   created_at datetime DEFAULT now(),
@@ -46,7 +45,7 @@ CREATE TABLE music(
   deleted_at datetime,
   deleted_YN tinyint(1) DEFAULT 0,
   members_id bigint,
-	FOREIGN KEY(members_id) REFERENCES members(members_id)
+  FOREIGN KEY(members_id) REFERENCES members(members_id) on delete cascade
 );
 
 CREATE TABLE follow(
@@ -56,10 +55,10 @@ CREATE TABLE follow(
   unfollow_YN tinyint(1) DEFAULT 0,
   follow_ing bigint,
   follower bigint,
-	FOREIGN KEY (follow_ing) REFERENCES members (members_id),
-    FOREIGN KEY (follower) REFERENCES members (members_id)
-    );
-    
+  FOREIGN KEY (follow_ing) REFERENCES members (members_id),
+  FOREIGN KEY (follower) REFERENCES members (members_id)
+);
+
 CREATE TABLE likes(
   likes_id bigint PRIMARY KEY AUTO_INCREMENT,
   created_at datetime DEFAULT now(),
@@ -68,10 +67,10 @@ CREATE TABLE likes(
   type ENUM ('members', 'music', 'playlist') NOT NULL,
   members_id bigint,
   identifier_id bigint,
-  FOREIGN KEY (members_id) REFERENCES members (members_id),
-FOREIGN KEY (identifier_id) REFERENCES playlist (playlist_id),
-FOREIGN KEY (identifier_id) REFERENCES members (members_id),
-FOREIGN KEY (identifier_id) REFERENCES music (music_id)
+  FOREIGN KEY (members_id) REFERENCES members (members_id) on delete cascade,
+  FOREIGN KEY (identifier_id) REFERENCES playlist (playlist_id) on delete cascade,
+  FOREIGN KEY (identifier_id) REFERENCES members (members_id) on delete cascade,
+  FOREIGN KEY (identifier_id) REFERENCES music (music_id) on delete cascade
 );
 
 CREATE TABLE playlist_music(
@@ -82,17 +81,19 @@ CREATE TABLE playlist_music(
   deleted_YN tinyint(1) DEFAULT 0,
   playlist_id bigint,
   music_id bigint,
- FOREIGN KEY (playlist_id) REFERENCES playlist (playlist_id),
- FOREIGN KEY (music_id) REFERENCES music (music_id));
- 
+  FOREIGN KEY (playlist_id) REFERENCES playlist (playlist_id) on delete cascade ,
+  FOREIGN KEY (music_id) REFERENCES music (music_id) on delete cascade
+);
+
 CREATE TABLE image(
   image_id bigint PRIMARY KEY AUTO_INCREMENT,
   type_ ENUM ('members', 'music', 'playlist') NOT NULL,
   image_url varchar(255),
   identifier_id bigint,
-FOREIGN KEY (identifier_id) REFERENCES playlist (playlist_id),
-FOREIGN KEY (identifier_id) REFERENCES members (members_id),
-FOREIGN KEY (identifier_id) REFERENCES music (music_id));
+  FOREIGN KEY (identifier_id) REFERENCES playlist (playlist_id) on delete cascade,
+  FOREIGN KEY (identifier_id) REFERENCES members (members_id) on delete cascade,
+  FOREIGN KEY (identifier_id) REFERENCES music (music_id) on delete cascade
+);
 
 CREATE TABLE comment(
   comment_id bigint PRIMARY KEY AUTO_INCREMENT,
@@ -103,5 +104,6 @@ CREATE TABLE comment(
   deleted_at datetime,
   members_id bigint,
   music_id bigint,
-FOREIGN KEY (music_id) REFERENCES music (music_id),
-FOREIGN KEY (members_id) REFERENCES members (members_id));
+  FOREIGN KEY (music_id) REFERENCES music (music_id) on delete cascade,
+  FOREIGN KEY (members_id) REFERENCES members (members_id) on delete cascade
+);
