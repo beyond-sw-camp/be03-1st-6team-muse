@@ -10,7 +10,7 @@ CREATE TABLE members(
   phone_number varchar(50) UNIQUE NOT NULL,
   birth_date datetime NOT NULL,
   created_at datetime DEFAULT now(),
-  updated_at datetime,
+  updated_at datetime DEFAULT now(),
   deleted_at datetime,
   deleted_YN tinyint(1) DEFAULT 0
 );
@@ -20,10 +20,10 @@ CREATE TABLE playlist(
   playlist_name varchar(100) NOT NULL,
   on_off tinyint(1) DEFAULT 1,
   created_at datetime DEFAULT now(),
-  updated_at datetime,
+  updated_at datetime DEFAULT now(),
   deleted_at datetime,
   deleted_YN tinyint(1) DEFAULT 0,
-  members_id bigint,
+  members_id bigint NOT NULL,
   FOREIGN KEY (members_id) REFERENCES members (members_id)
 );
 
@@ -42,10 +42,10 @@ CREATE TABLE music(
   'Chicago_house', 'Futurepop', 'Dubstep'),
   on_off tinyint(1),
   created_at datetime DEFAULT now(),
-  updated_at datetime,
+  updated_at datetime DEFAULT now(),
   deleted_at datetime,
   deleted_YN tinyint(1) DEFAULT 0,
-  members_id bigint,
+  members_id bigint NOT NULL,
   FOREIGN KEY(members_id) REFERENCES members(members_id) on delete cascade
 );
 
@@ -78,11 +78,11 @@ CREATE TABLE likes(
 CREATE TABLE playlist_music(
   pm_id bigint PRIMARY KEY AUTO_INCREMENT,
   created_at datetime DEFAULT now(),
-  updated_at datetime,
+  updated_at datetime DEFAULT now(),
   deleted_at datetime,
   deleted_YN tinyint(1) DEFAULT 0,
-  playlist_id bigint,
-  music_id bigint,
+  playlist_id bigint NOT NULL,
+  music_id bigint NOT NULL,
   FOREIGN KEY (playlist_id) REFERENCES playlist (playlist_id) on delete cascade ,
   FOREIGN KEY (music_id) REFERENCES music (music_id) on delete cascade
 );
