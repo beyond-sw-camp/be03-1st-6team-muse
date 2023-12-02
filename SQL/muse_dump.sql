@@ -29,7 +29,7 @@ CREATE TABLE `comment` (
   `created_at` datetime DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
-  'deleted_YN' tinyint(1) DEFAUlT 0,
+  `deleted_YN` tinyint(1) DEFAUlT 0,
   `members_id` bigint(20) NOT NULL,
   `music_id` bigint(20) NOT NULL,
   `parent_id` bigint(20) NOT NULL,

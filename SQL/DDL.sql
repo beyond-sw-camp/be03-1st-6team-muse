@@ -103,9 +103,9 @@ CREATE TABLE image(
   updated_at datetime DEFAULT now(), -- 수정날짜
   deleted_at datetime, -- 삭제날짜
   deleted_YN tinyint(1) DEFAUlT 0, -- 삭제여부 1: 삭제 
-  members_id bigint, -- 회원정보
-  music_id bigint,
-  playlist_id bigint,
+  members_id bigint, -- 회원정보 fk
+  music_id bigint, -- 노래정보 fk
+  playlist_id bigint, -- 플레이리스트 fk
   FOREIGN KEY (playlist_id) REFERENCES playlist (playlist_id) on delete cascade,
   FOREIGN KEY (members_id) REFERENCES members (members_id) on delete cascade,
   FOREIGN KEY (music_id) REFERENCES music (music_id) on delete cascade
@@ -114,7 +114,7 @@ CREATE TABLE image(
 -- 댓글, 대댓글 테이블
 CREATE TABLE comment(
   comment_id bigint PRIMARY KEY AUTO_INCREMENT,
-  comment_chk tinyint(1),
+  comment_chk tinyint(1), -- 댓글
   contents varchar(300),
   created_at datetime DEFAULT now(),
   updated_at datetime DEFAULT now(),
