@@ -105,8 +105,11 @@ CREATE TABLE comment(
   created_at datetime DEFAULT now(),
   updated_at datetime,
   deleted_at datetime,
+  deleted_YN tinyint(1),
   members_id bigint not null,
   music_id bigint not null,
+  parent_id bigint not null default 0,
   FOREIGN KEY (music_id) REFERENCES music (music_id) on delete cascade,
-  FOREIGN KEY (members_id) REFERENCES members (members_id) on delete cascade
+  FOREIGN KEY (members_id) REFERENCES members (members_id) on delete cascade,
+  FOREIGN KEY (parent_id) REFERENCES comment (comment_id)
 );
