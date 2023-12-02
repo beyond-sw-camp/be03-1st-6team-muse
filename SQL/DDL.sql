@@ -92,7 +92,7 @@ CREATE TABLE image(
   image_url varchar(255),
   members_id bigint,
   music_id bigint,
-  playlist_id bigint
+  playlist_id bigint,
   FOREIGN KEY (playlist_id) REFERENCES playlist (playlist_id) on delete cascade,
   FOREIGN KEY (members_id) REFERENCES members (members_id) on delete cascade,
   FOREIGN KEY (music_id) REFERENCES music (music_id) on delete cascade
