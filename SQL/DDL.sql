@@ -105,8 +105,8 @@ CREATE TABLE comment(
   created_at datetime DEFAULT now(),
   updated_at datetime,
   deleted_at datetime,
-  members_id bigint,
-  music_id bigint,
+  members_id bigint not null,
+  music_id bigint not null,
   FOREIGN KEY (music_id) REFERENCES music (music_id) on delete cascade,
   FOREIGN KEY (members_id) REFERENCES members (members_id) on delete cascade
 );
