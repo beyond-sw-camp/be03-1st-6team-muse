@@ -132,9 +132,9 @@ INSERT INTO `image` VALUES
 (7,'public/storage/img/7',NULL,7,NULL,'2023-12-02 19:34:18','2023-12-02 19:34:18',NULL,0),
 (8,'public/storage/img/8',NULL,8,NULL,'2023-12-02 19:34:18','2023-12-02 19:34:18',NULL,0),
 (9,'public/storage/img/9',NULL,NULL,1,'2023-12-02 19:34:18','2023-12-02 19:34:18',NULL,0),
-(10,'public/storage/img/10',NULL,NULL,2),
-(11,'public/storage/img/11',NULL,NULL,3),
-(12,'public/storage/img/12',NULL,NULL,4);
+(10,'public/storage/img/10',NULL,NULL,2,'2023-12-02 19:34:18','2023-12-02 19:34:18',NULL,0),
+(11,'public/storage/img/11',NULL,NULL,3,'2023-12-02 19:34:18','2023-12-02 19:34:18',NULL,0),
+(12,'public/storage/img/12',NULL,NULL,4,'2023-12-02 19:34:18','2023-12-02 19:34:18',NULL,0);
 /*!40000 ALTER TABLE `image` ENABLE KEYS */;
 UNLOCK TABLES;
 
