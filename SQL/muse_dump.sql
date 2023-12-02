@@ -123,15 +123,15 @@ CREATE TABLE `image` (
 LOCK TABLES `image` WRITE;
 /*!40000 ALTER TABLE `image` DISABLE KEYS */;
 INSERT INTO `image` VALUES
-(1,'public/storage/img/1',1,NULL,NULL),
-(2,'public/storage/img/2',2,NULL,NULL),
-(3,'public/storage/img/3',3,NULL,NULL),
-(4,'public/storage/img/4',NULL,1,NULL),
-(5,'public/storage/img/5',NULL,2,NULL),
-(6,'public/storage/img/6',NULL,4,NULL),
-(7,'public/storage/img/7',NULL,7,NULL),
-(8,'public/storage/img/8',NULL,8,NULL),
-(9,'public/storage/img/9',NULL,NULL,1),
+(1,'public/storage/img/1',1,NULL,NULL,'2023-12-02 19:34:18','2023-12-02 19:34:18',NULL,0),
+(2,'public/storage/img/2',2,NULL,NULL,'2023-12-02 19:34:18','2023-12-02 19:34:18',NULL,0),
+(3,'public/storage/img/3',3,NULL,NULL,'2023-12-02 19:34:18','2023-12-02 19:34:18',NULL,0),
+(4,'public/storage/img/4',NULL,1,NULL,'2023-12-02 19:34:18','2023-12-02 19:34:18',NULL,0),
+(5,'public/storage/img/5',NULL,2,NULL,'2023-12-02 19:34:18','2023-12-02 19:34:18',NULL,0),
+(6,'public/storage/img/6',NULL,4,NULL,'2023-12-02 19:34:18','2023-12-02 19:34:18',NULL,0),
+(7,'public/storage/img/7',NULL,7,NULL,'2023-12-02 19:34:18','2023-12-02 19:34:18',NULL,0),
+(8,'public/storage/img/8',NULL,8,NULL,'2023-12-02 19:34:18','2023-12-02 19:34:18',NULL,0),
+(9,'public/storage/img/9',NULL,NULL,1,'2023-12-02 19:34:18','2023-12-02 19:34:18',NULL,0),
 (10,'public/storage/img/10',NULL,NULL,2),
 (11,'public/storage/img/11',NULL,NULL,3),
 (12,'public/storage/img/12',NULL,NULL,4);
