@@ -102,7 +102,7 @@ CREATE TABLE image(
   created_at datetime DEFAULT now(), -- 생성날짜
   updated_at datetime DEFAULT now(), -- 수정날짜
   deleted_at datetime, -- 삭제날짜
-  deleted_YN tinyint(1) DEFAUlT 0, -- 삭제여부 1: 삭제 
+  deleted_YN tinyint(1) DEFAUlT 0, -- 삭제여부 1: 삭제, 0: 미삭제
   members_id bigint, -- 회원정보 fk
   music_id bigint, -- 노래정보 fk
   playlist_id bigint, -- 플레이리스트 fk
@@ -114,15 +114,15 @@ CREATE TABLE image(
 -- 댓글, 대댓글 테이블
 CREATE TABLE comment(
   comment_id bigint PRIMARY KEY AUTO_INCREMENT,
-  comment_chk tinyint(1), -- 댓글
-  contents varchar(300),
-  created_at datetime DEFAULT now(),
-  updated_at datetime DEFAULT now(),
-  deleted_at datetime,
-  deleted_YN tinyint(1) DEFAUlT 0,
-  members_id bigint not null,
-  music_id bigint not null,
-  parent_id bigint not null DEFAUlT 0,
+  comment_chk tinyint(1), -- 댓글, 대댓글 확인 1: 댓글, 0: 대댓글
+  contents varchar(300), -- 댓글 내용
+  created_at datetime DEFAULT now(), -- 생성날짜
+  updated_at datetime DEFAULT now(), -- 수정날짜
+  deleted_at datetime, -- 삭제날짜
+  deleted_YN tinyint(1) DEFAUlT 0, -- 삭제여부 1: 삭제, 0: 미삭제
+  members_id bigint not null, -- 회원정보 fk
+  music_id bigint not null, -- 음악정보 fk
+  parent_id bigint not null DEFAUlT 0, -- 대댓글의 댓글id fk
   FOREIGN KEY (music_id) REFERENCES music (music_id) on delete cascade,
   FOREIGN KEY (members_id) REFERENCES members (members_id) on delete cascade,
   FOREIGN KEY (parent_id) REFERENCES comment (comment_id)
