@@ -114,7 +114,7 @@ select music_id, title, artist, created_at, updated_at, deleted_at, deleted_YN, 
 
 
 -- 노래차트 이름순
-select m.music_id, m.title, m.artist, m.genre, count(l.music.id) as likes
+select m.music_id, m.title, m.artist, m.genre, count(l.music_id) as likes
 from music m left join likes l
 on m.music_id = l.music_id
 where m.deleted_YN = 0
@@ -123,7 +123,7 @@ order by m.title;
 
 
 -- 노래차트 좋아요순
-select m.music_id, m.title, m.artist, m.genre, count(l.music.id) as likes
+select m.music_id, m.title, m.artist, m.genre, count(l.music_id) as likes
 from music m left join likes l
 on m.music_id = l.music_id
 where m.deleted_YN = 0
@@ -132,7 +132,7 @@ order by likes desc;
 
 
 -- 노래차트 최신순
-select m.music_id, m.title, m.artist, m.genre, count(l.music.id) as likes
+select m.music_id, m.title, m.artist, m.genre, count(l.music_id) as likes
 from music m left join likes l
 on m.music_id = l.music_id
 where m.deleted_YN = 0
