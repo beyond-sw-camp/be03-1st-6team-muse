@@ -36,7 +36,7 @@ CREATE TABLE music(
   title varchar(100) NOT NULL, -- 노래제목
   artist varchar(200) NOT NULL, -- 아티스트명
   description varchar(3000), -- 설명 or 노래가사
-  music_file_url varchar(255) NOT NULL, --노래 파일 url
+  music_file_url varchar(255) NOT NULL, -- 노래 파일 url
   genre ENUM -- 노래 장르
   ('Kpop', 'Jpop', 'OST', 'Pop', 'Classic', 'Jazz', 'Indie', 'Canadian_blues', 
   'Contemporary_RnB', 'Punk_blues', 'Crossover_music', 'Instrumental', 'Lofi', 'Blues_rock',
