@@ -60,7 +60,7 @@
 
  ![Alt 논리적 ERD](https://github.com/SimJH99/MUSE_DB/blob/main/PNG/ERD/%EA%B0%9C%EB%B0%9C6%ED%8C%80_MUSE_%EB%A6%B4%EB%A0%88%EC%9D%B4%EC%85%98%EC%8A%A4%ED%82%A4%EB%A7%88.png)
 
-## 주요 쿼리 요약본
+## 🎧 주요 쿼리 요약본
 * DDL
 **회원 테이블 생성**
 ```SQL
@@ -131,7 +131,7 @@ grant exectue on procedure muse.delete_playlist to 'user_viewpoint'@'%';
 flush privileges;
 ```
 ---
-# 테스트
+## 🎧테스트
 <details>
 <summary>회원가입</summary>
 <div markdown="1">
@@ -208,4 +208,17 @@ flush privileges;
 * **테스트 결과**
    <br>![Alt 논리적 ERD](https://github.com/SimJH99/MUSE_DB/blob/main/PNG/Test%20Queries/Search_Follow_PNG/follow_PNG/%ED%8C%94%EB%A1%9C%EC%9A%B0%20%EA%B2%B0%EA%B3%BC.png)  
 </details>
+
 ---
+
+## 🎧회고
+* 심재혁 : 결과가 나와서 너무 다행이라고 생각하고 결과만큼 그 과정들에서 다들 으쌰으쌰 하면서 각자 하나라도 더 열심히 할려는 분위기가 너무 좋아 모두 끝까지 할 수 있었다.
+
+* 이창선 : 
+팀원들을 최대한 따라가려고 노력했지만 너무 부족했다. 하지만 덕분에 많은걸 배워가는 시간이었다! 
+
+* 조경남 : 
+다음에는 rdbms뿐만 아니라 nosql 이용한 DB설계도 같이 해보고 싶다. 가능하다면 채팅, 관리자 기능을 추가해보고 싶다.
+
+* 홍신애 : 
+DB 설계 프로젝트가 처음이었기 때문에 ERD 설계부터 여러 시행착오를 겪었다. 함께 설계하는 과정에서 여러 의견도 주고 받으면서 훨씬 더 효율적이고 논리적인 아키텍쳐를 만들 수 있었다. 프로젝트를 조금 더 이행할 수 있는 시간이 주어진다면 회원들끼리 그룹을 형성해서 커뮤니티를 형성할 수 있는 기능도 추가해서 설계해보고 싶다.
