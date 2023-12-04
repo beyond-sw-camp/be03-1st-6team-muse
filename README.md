@@ -21,7 +21,7 @@
 **소통의 장 역시 제공한다.**
 <br> 회원들은 각 노래와 플레이리스트에 <ins>;❤좋아요</ins>를 누를 수 있으며 
 <br>다른 회원들의 피드를 모아볼 수 있는 회원 <ins>👫팔로우</ins> 기능도 제공한다.
-<br>이에, 본인의 취향을 공유하고 또 소통을 가능케 한다.
+<br>이에, 본인의 취향을 공유하고 또 소통을 가능하게 한다.
 
 ---
 # 시장 조사 및 프로젝트 필요성
@@ -35,9 +35,8 @@
 **<br> ❗ 음악 스트리밍 서비스는 무궁무진하게 발전할 수 있는 분야이며 
 <br> 최근 사회는 스트리밍 서비스에 크게 의존하고 있다는 동향에 따라 해당 프로젝트를 진행했다.**
 
-  ![Alt Global Recorded Music Revenue](https://www.digitalmusicnews.com/wp-content/uploads/2023/03/Global-Music-Industry-Revenue-Breakdown-2022.jpg)
- ![Alt Music Streaming Revenue](https://cdn.buttercms.com/output=f:webp/fObvxkSgRAefF9B0jyFo)
- 
+ <img src = "https://www.digitalmusicnews.com/wp-content/uploads/2023/03/Global-Music-Industry-Revenue-Breakdown-2022.jpg" width="40%" height="40%"> &nbsp;&nbsp;&nbsp; <img src = "https://cdn.buttercms.com/output=f:webp/fObvxkSgRAefF9B0jyFo" width="40%" height="40%"> 
+
 ---
 # 요구사항
 
