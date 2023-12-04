@@ -33,7 +33,7 @@
 <br>2022년에는 175억 달러를 달성했고 2025년에는 300억 달러를 초과한다는 분석도 나오고 있다. 
 
 **<br> ❗ 음악 스트리밍 서비스는 무궁무진하게 발전할 수 있는 분야이며 
-<br> 최근 사회는 스트리밍 서비스에 크게 의존하고 있다는 동향에 따라 해당 프로젝트를 Agile 방식으로 진행했다.**
+<br> 최근 사회는 스트리밍 서비스에 크게 의존하고 있다는 동향에 따라 해당 프로젝트를 진행했다.**
 
  <img src = "https://www.digitalmusicnews.com/wp-content/uploads/2023/03/Global-Music-Industry-Revenue-Breakdown-2022.jpg" width="40%" height="40%"> &nbsp;&nbsp;&nbsp; <img src = "https://cdn.buttercms.com/output=f:webp/fObvxkSgRAefF9B0jyFo" width="40%" height="40%"> 
 
@@ -61,9 +61,73 @@
  ![Alt 논리적 ERD](https://github.com/SimJH99/MUSE_DB/blob/main/PNG/ERD/%EA%B0%9C%EB%B0%9C6%ED%8C%80_MUSE_%EB%A6%B4%EB%A0%88%EC%9D%B4%EC%85%98%EC%8A%A4%ED%82%A4%EB%A7%88.png)
 
 # 주요 쿼리 요약본
+* DDL
+```SQL
+CREATE TABLE members(
+   members_id bigint PRIMARY KEY AUTO_INCREMENT,
+   email varchar(100) UNIQUE NOT NULL, -- 이메일: 회원가입시 아이디로 사용
+   password varchar(255) NOT NULL, -- 비밀번호
+   name varchar(200) NOT NULL, -- 실명
+   nickname varchar(200) NOT NULL, -- 닉네임 
+   gender ENUM ('M', 'F'), -- 성별
+   phone_number varchar(50) UNIQUE NOT NULL, -- 전화번호
+   birth_date datetime NOT NULL, -- 생일
+   created_at datetime DEFAULT now(), -- 회원가입 날짜
+   updated_at datetime DEFAULT now(), -- 정보수정날짜
+   deleted_at datetime, -- 정보삭제날짜
+   deleted_YN tinyint(1) DEFAULT 0 -- 정보삭제여부 1: 삭제, 0: 미삭제
+ );
+```
+```SQL
+CREATE TABLE music(
+  music_id bigint PRIMARY KEY AUTO_INCREMENT,
+  title varchar(100) NOT NULL, -- 노래제목
+  artist varchar(200) NOT NULL, -- 아티스트명
+  description varchar(3000), -- 설명 or 노래가사
+  music_file_url varchar(255) NOT NULL, -- 노래 파일 url
+  genre ENUM -- 노래 장르
+  ('Kpop', 'Jpop', 'OST', 'Pop', 'Classic', 'Jazz', 'Indie', 'Canadian_blues', 
+  'Contemporary_RnB', 'Punk_blues', 'Crossover_music', 'Instrumental', 'Lofi', 'Blues_rock',
+  'Chicago_blues', 'Delta_blues', 'EDM', 'Country_pop', 'Country_rap', 'Country_rock', 'Instrumental_country',
+  'Western', 'New_age', 'Darkcore', 'Disco', 'City_pop', 'Dance_pop', 'Electronic_rock', 'Dance_rock',
+  'Alternative_dance', 'Madchester', 'Baggy', 'New_rave', 'New_romantic', 'Electropop',
+  'Electronica', 'Folktronica', 'Acid_jazz','Jungle', 'Hipster_hop', 'Cloud_rap', 'Acid_house',
+  'Chicago_house', 'Futurepop', 'Dubstep'),
+  on_off tinyint(1), -- 노래 공개/비공개 1: 공개 , 0: 미삭제 
+  created_at datetime DEFAULT now(), -- 노래업로드 날짜
+  updated_at datetime DEFAULT now(), -- 정보수정날짜
+  deleted_at datetime, -- 노래삭제날짜
+  deleted_YN tinyint(1) DEFAULT 0, -- 노래삭제여부 1: 삭제, 0: 미삭제
+  members_id bigint NOT NULL, -- 회원정보테이블 fk
+  FOREIGN KEY(members_id) REFERENCES members(members_id) on delete cascade
+);
+```
+* DCL
+```SQL
+create user 'user_viewpoint'@'%';
+create user 'admin_viewpoint'@'%';
 
+grant select on muse.* to 'admin_viewpoint'@'%';
+grant update on muse.* to 'admin_viewpoint'@'%';
+grant insert on muse.* to 'admin_viewpoint'@'%';
+grant delete on muse.* to 'admin_viewpoint'@'%';
+grant exectue on procedure muse.press_like to 'admin_viewpoint'@'%';
+grant exectue on procedure muse.playlist_rename to 'admin_viewpoint'@'%';
+grant exectue on procedure muse.playlist_on_off_set to 'admin_viewpoint'@'%';
+grant exectue on procedure muse.playlist_music_insert to 'admin_viewpoint'@'%';
+grant exectue on procedure muse.press_image_change to 'admin_viewpoint'@'%';
+grant exectue on procedure muse.delete_playlist to 'admin_viewpoint'@'%';
+flush privileges;
 
-
+grant select on muse.* to 'user_viewpoint'@'%';
+grant exectue on procedure muse.press_like to 'user_viewpoint'@'%';
+grant exectue on procedure muse.playlist_rename to 'user_viewpoint'@'%';
+grant exectue on procedure muse.playlist_on_off_set to 'user_viewpoint'@'%';
+grant exectue on procedure muse.playlist_music_insert to 'user_viewpoint'@'%';
+grant exectue on procedure muse.press_image_change to 'user_viewpoint'@'%';
+grant exectue on procedure muse.delete_playlist to 'user_viewpoint'@'%';
+flush privileges;
+```
 ---
 # 테스트
 
