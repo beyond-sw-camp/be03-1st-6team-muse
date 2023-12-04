@@ -62,6 +62,7 @@
 
 # 주요 쿼리 요약본
 * DDL
+**회원 테이블 생성**
 ```SQL
 CREATE TABLE members(
    members_id bigint PRIMARY KEY AUTO_INCREMENT,
@@ -78,6 +79,7 @@ CREATE TABLE members(
    deleted_YN tinyint(1) DEFAULT 0 -- 정보삭제여부 1: 삭제, 0: 미삭제
  );
 ```
+**노래 테이블 생성**
 ```SQL
 CREATE TABLE music(
   music_id bigint PRIMARY KEY AUTO_INCREMENT,
