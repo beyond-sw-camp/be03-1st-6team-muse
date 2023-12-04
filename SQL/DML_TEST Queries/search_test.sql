@@ -43,13 +43,15 @@ m.name,
 m.nickname,
 m.deleted_YN as user_deleted_YN,
 p.deleted_YN as playlist_deleted_YN,
-p.on_off as playlist_on_off
+p.on_off as playlist_on_off,
+count(l.likes_id) as like_count
 from members as m
 join playlist as p
 on m.members_id = p.members_id
 left join likes as l
 on p.playlist_id = l.playlist_id
-where (p.playlist_name like '%a%' or m.name like '%a%' or m.nickname like '%d%') 
+where (p.playlist_name like '%a%' or m.name like '%a%' or m.nickname like '%a%')
 and m.deleted_YN = 0 and p.deleted_YN = 0 and  p.on_off = 1
 group by p.playlist_id
+order by like_count desc;
 
