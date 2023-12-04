@@ -2,7 +2,7 @@
 ![Muse Banner](https://github.com/SimJH99/MUSE_DB/assets/123349044/4545d1e4-765c-4c8d-b538-5bea1b5e3c5b)
 
 ---
-## 팀명: 개발 6팀
+### 팀명: 개발 6팀
 ### 팀원
 - 팀장 : [심재혁](https://github.com/SimJH99) :rabbit: 
 - 사원 : [이창선](https://github.com/keepself) :pig:
@@ -10,7 +10,7 @@
 - 사원 : [조경남](https://github.com/GyeongNam) :cow:
 
 ---
-# 🎧 프로젝트 소개
+## 🎧 프로젝트 소개
 
 **MUSE 프로젝트는 음악 공유/스트리밍 서비스를 제공하는 플랫폼이다.**
 <br> 회원 본인이 직접 제작한 노래들을 업로드하면서 자신의 창작물을 다수의 사람들이 즐길 수 있게 된다.
@@ -24,7 +24,7 @@
 <br>이에, 본인의 취향을 공유하고 또 소통을 가능하게 한다.
 
 ---
-# 🎧 시장 조사 및 프로젝트 필요성
+## 🎧 시장 조사 및 프로젝트 필요성
 국제 음반 산업 협회(IFPI)에서 제공한 ‘글로벌 음악 보고서 2023’에 따르면,
 <br>음악 스트리밍 서비스는 전세계 음악산업 수익의 67%를 차지하고 전년 대비 10%이상 성장했다. 
 <br> 이는 8년 연속 성장세를 보이고 있으며 앞으로도 계속 성장세를 이어갈 것이라고 예상하고 있다.
@@ -38,11 +38,11 @@
  <img src = "https://www.digitalmusicnews.com/wp-content/uploads/2023/03/Global-Music-Industry-Revenue-Breakdown-2022.jpg" width="40%" height="40%"> &nbsp;&nbsp;&nbsp; <img src = "https://cdn.buttercms.com/output=f:webp/fObvxkSgRAefF9B0jyFo" width="40%" height="40%"> 
 
 ---
-# 🎧 WBS
+## 🎧 WBS
  ![Alt WBS](https://github.com/SimJH99/MUSE_DB/blob/main/PNG/WBS/%EA%B0%9C%EB%B0%9C6%ED%8C%80%20WBS.PNG)
 
 ---
-# 🎧 요구사항
+## 🎧 요구사항
 
  ![Alt 회원가입_로그인_마이페이지](https://github.com/SimJH99/MUSE_DB/blob/main/%EC%84%9C%EB%B9%84%EC%8A%A4%20%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD-%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85_%EB%A1%9C%EA%B7%B8%EC%9D%B8_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png)
 
@@ -51,7 +51,7 @@
    ![Alt 검색_팔로우](https://github.com/SimJH99/MUSE_DB/blob/main/%EC%84%9C%EB%B9%84%EC%8A%A4%20%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD-%EA%B2%80%EC%83%89_%ED%8C%94%EB%A1%9C%EC%9A%B0.png)
 
 ---
-# 🎧 DB 모델링
+## 🎧 DB 모델링
   * 개념적 모델링
 
  ![Alt 개념적 ERD](https://github.com/SimJH99/MUSE_DB/blob/main/PNG/ERD/MUSE_%EA%B0%9C%EB%85%90%EC%A0%81_%EB%AA%A8%EB%8D%B8%EB%A7%81.drawio.png)
@@ -60,7 +60,7 @@
 
  ![Alt 논리적 ERD](https://github.com/SimJH99/MUSE_DB/blob/main/PNG/ERD/%EA%B0%9C%EB%B0%9C6%ED%8C%80_MUSE_%EB%A6%B4%EB%A0%88%EC%9D%B4%EC%85%98%EC%8A%A4%ED%82%A4%EB%A7%88.png)
 
-# 주요 쿼리 요약본
+## 주요 쿼리 요약본
 * DDL
 **회원 테이블 생성**
 ```SQL
@@ -132,7 +132,80 @@ flush privileges;
 ```
 ---
 # 테스트
+<details>
+<summary>회원가입</summary>
+<div markdown="1">
+
+* **쿼리문**
+<br>![Alt 논리적 ERD](https://github.com/SimJH99/MUSE_DB/blob/main/PNG/Test%20Queries/Signup_Login_Mypage_PNG/sign%20up%20image/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85%20sql.png)
+
+* **테스트 결과**
+ <br>![Alt 논리적 ERD](https://github.com/SimJH99/MUSE_DB/blob/main/PNG/Test%20Queries/Signup_Login_Mypage_PNG/sign%20up%20image/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85%20sql%20%EA%B2%B0%EA%B3%BC.png)
+
+</div>
+</details>
+
+<details>
+<summary>노래 업로드</summary>
+<div markdown="1">
+
+ * **쿼리문**
+<br>![Alt 논리적 ERD](https://github.com/SimJH99/MUSE_DB/blob/main/PNG/Test%20Queries/Music_PNG/%EB%85%B8%EB%9E%98%EC%B6%94%EA%B0%80.PNG)
+
+* **테스트 결과**
+ <br>![Alt 논리적 ERD](https://github.com/SimJH99/MUSE_DB/blob/main/PNG/Test%20Queries/Music_PNG/%EB%85%B8%EB%9E%98%EC%B6%94%EA%B0%80%20%EA%B2%B0%EA%B3%BC.PNG)
+ </div>
+</details>
+
+<details>
+<summary>플레이리스트 생성</summary>
+<div markdown="1">
+
+* **쿼리문**
+<br>![Alt 논리적 ERD](https://github.com/SimJH99/MUSE_DB/blob/main/PNG/Test%20Queries/Playlist_PNG/%ED%94%8C%EB%A0%88%EC%9D%B4%EB%A6%AC%EC%8A%A4%ED%8A%B8%20DML%20-%20Test%20Queries/%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4%201-1.png)
+
+* **테스트 결과**
+ <br>![Alt 논리적 ERD](https://github.com/SimJH99/MUSE_DB/blob/main/PNG/Test%20Queries/Playlist_PNG/%ED%94%8C%EB%A0%88%EC%9D%B4%EB%A6%AC%EC%8A%A4%ED%8A%B8%20DML%20-%20Test%20Queries/%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4%201-1%20%EA%B2%B0%EA%B3%BC.png)
+ </div>
+</details>
 
 
+<details>
+<summary>플레이리스트에 노래 추가</summary>
+<div markdown="1">
 
+* **쿼리문**
+<br>![Alt 논리적 ERD](https://github.com/SimJH99/MUSE_DB/blob/main/PNG/Test%20Queries/Playlist_PNG/%ED%94%8C%EB%A0%88%EC%9D%B4%EB%A6%AC%EC%8A%A4%ED%8A%B8%20DML%20-%20Test%20Queries/%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4%201-3.png)
+
+* **테스트 결과**
+   1) **추가된 노래가 플리에 잘 들어갔는지 확인**
+  <br>![Alt 논리적 ERD](https://github.com/SimJH99/MUSE_DB/blob/main/PNG/Test%20Queries/Playlist_PNG/%ED%94%8C%EB%A0%88%EC%9D%B4%EB%A6%AC%EC%8A%A4%ED%8A%B8%20DML%20-%20Test%20Queries/%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4%201-3%20%EA%B2%B0%EA%B3%BC%20playlist_music%EC%97%90%20%EC%B6%94%EA%B0%80%EB%90%9C%20%EB%85%B8%EB%9E%98%EA%B0%80%20%ED%94%8C%EB%A6%AC%EC%97%90%20%EC%9E%98%20%EB%93%A4%EC%96%B4%EA%B0%94%EB%8A%94%EC%A7%80%20%ED%99%95%EC%9D%B8.png)
+
+  2) **플리에 추가된 노래 확인**
+      <br>![Alt 논리적 ERD](https://github.com/SimJH99/MUSE_DB/blob/main/PNG/Test%20Queries/Playlist_PNG/%ED%94%8C%EB%A0%88%EC%9D%B4%EB%A6%AC%EC%8A%A4%ED%8A%B8%20DML%20-%20Test%20Queries/%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4%201-3%20%EA%B2%B0%EA%B3%BC%20%EC%B6%94%EA%B0%80%EB%90%9C%20%ED%94%8C%EB%A6%AC%EC%99%80%20%EB%85%B8%EB%9E%98%20%EB%A7%A4%EC%B9%AD.png)
+     
+</details>
+
+<details>
+<summary>플레이리스트에 좋아요 누르기</summary>
+<div markdown="1">
+
+* **쿼리문**
+    <br>![Alt 논리적 ERD](https://github.com/SimJH99/MUSE_DB/blob/main/PNG/Test%20Queries/Playlist_PNG/%ED%94%8C%EB%A0%88%EC%9D%B4%EB%A6%AC%EC%8A%A4%ED%8A%B8%20DML%20-%20Test%20Queries/%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4%203-2.png)
+ 
+* **테스트 결과**
+  <br>![Alt 논리적 ERD](https://github.com/SimJH99/MUSE_DB/blob/main/PNG/Test%20Queries/Playlist_PNG/%ED%94%8C%EB%A0%88%EC%9D%B4%EB%A6%AC%EC%8A%A4%ED%8A%B8%20DML%20-%20Test%20Queries/%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4%203-2%20%EA%B2%B0%EA%B3%BC%20%ED%94%84%EB%A1%9C%EC%8B%9C%EC%A0%80%20%EC%BD%9C%20%EC%B5%9C%EC%B4%88%20%EC%A2%8B%EC%95%84%EC%9A%94.png)
+     
+</details>
+
+<details>
+<summary>팔로우/팔로잉</summary>
+<div markdown="1">
+
+* **쿼리문**
+ <br>![Alt 논리적 ERD](https://github.com/SimJH99/MUSE_DB/blob/main/PNG/Test%20Queries/Search_Follow_PNG/follow_PNG/%ED%8C%94%EB%A1%9C%EC%9E%89.png)
+
+* **테스트 결과**
+   <br>![Alt 논리적 ERD](https://github.com/SimJH99/MUSE_DB/blob/main/PNG/Test%20Queries/Search_Follow_PNG/follow_PNG/%ED%8C%94%EB%A1%9C%EC%9A%B0%20%EA%B2%B0%EA%B3%BC.png)  
+</details>
 ---
